@@ -11,11 +11,13 @@ require_relative 'router'
 
 csv_file_path = File.join(__dir__, 'data/meals.csv')
 meal_repository = MealRepository.new(csv_file_path)
+p meal_repository
 meals_controller = MealsController.new(meal_repository)
-
+puts
 csv_file_path = File.join(__dir__, 'data/customers.csv')
 customer_repository = CustomerRepository.new(csv_file_path)
-customers_controller = CustomersController.new(customer_repository)
+p customer_repository
+# customers_controller = CustomersController.new(customer_repository)
 
-router = Router.new(meals_controller, customers_controller)
-router.run
+# router = Router.new(meals_controller, customers_controller)
+# router.run
